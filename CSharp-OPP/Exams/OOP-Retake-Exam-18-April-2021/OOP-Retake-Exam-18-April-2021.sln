@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Easter", "Easter\Easter.csproj", "{7F0C8D62-4623-472D-AB09-CD218D52FEFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presents.Tests", "Unit_Tests\Presents.Tests.csproj", "{9FE4F65E-9A27-4FDB-A903-1911106C2616}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F0C8D62-4623-472D-AB09-CD218D52FEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0C8D62-4623-472D-AB09-CD218D52FEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0C8D62-4623-472D-AB09-CD218D52FEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0C8D62-4623-472D-AB09-CD218D52FEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FE4F65E-9A27-4FDB-A903-1911106C2616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE4F65E-9A27-4FDB-A903-1911106C2616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE4F65E-9A27-4FDB-A903-1911106C2616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE4F65E-9A27-4FDB-A903-1911106C2616}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75C9056B-3FAF-47F9-A746-7A1A750F0018}
+	EndGlobalSection
+EndGlobal
