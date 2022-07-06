@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes", "Heroes\Heroes.csproj", "{265626AD-3B4E-409F-9913-E526E13D6864}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepairShop.Tests", "Unit_Tests\RepairShop.Tests.csproj", "{24AD95AE-4CEC-4FF6-843E-7BCA81CD87C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{265626AD-3B4E-409F-9913-E526E13D6864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265626AD-3B4E-409F-9913-E526E13D6864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265626AD-3B4E-409F-9913-E526E13D6864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265626AD-3B4E-409F-9913-E526E13D6864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AD95AE-4CEC-4FF6-843E-7BCA81CD87C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AD95AE-4CEC-4FF6-843E-7BCA81CD87C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AD95AE-4CEC-4FF6-843E-7BCA81CD87C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AD95AE-4CEC-4FF6-843E-7BCA81CD87C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {558AF3AD-28C7-4659-8C53-7C65414A4FFE}
+	EndGlobalSection
+EndGlobal
