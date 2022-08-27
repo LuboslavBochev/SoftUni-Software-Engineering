@@ -1,0 +1,18 @@
+Create Table Users
+(
+	id BIGINT PRIMARY KEY IDENTITY,
+	[Username] varchar(30) NOT NULL,
+	[Password] varchar(26) NOT NULL,
+	ProfilePicture varchar(MAX),
+	LastLoginTime DateTime,
+	IsDeleted Bit
+)
+
+Insert into Users
+([Username], [Password], ProfilePicture, LastLoginTime, IsDeleted)
+Values
+	('Ivan', 'passwsord', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', '1/12/2021', 0),
+	('Tonia', 'passsword', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', '4/2/2020', 0),
+	('Tonsi', 'passasword', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', '6/1/2012', 0),
+	('Todni', 'passwford', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', '3/2/2012', 0),
+	('Tofni', 'passgword', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', '5/1/2012', 0)

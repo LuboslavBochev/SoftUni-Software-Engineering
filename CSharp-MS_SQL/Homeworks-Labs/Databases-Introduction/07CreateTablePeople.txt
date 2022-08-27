@@ -1,0 +1,19 @@
+ CREATE TABLE People
+ (
+	id INT PRIMARY KEY IDENTITY,
+	[Name] nvarchar(200) NOT NULL,
+	Picture varchar(MAX) NULL,
+	Height decimal(5, 2) NULL,
+	[Weight] decimal(5, 2) NULL,
+	Gender char(1) NOT NULL,
+	Birthdate DateTime NULL,
+	Biography nvarchar(MAX) NOT NULL
+ )
+
+ INSERT INTO People([Name], Picture, Height, [Weight], Gender, Birthdate, Biography)
+ Values
+ ('John', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', 223.4, 557.3, 'm', '1/12/2021', 'shalq'),
+ ('Johna', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', 2.4, 545.3, 'f', '1/12/2021', 'shalq'),
+ ('Joahn', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', 224.4, 65.4, 'm', '1/12/2021', 'shalq'),
+ ('Johsn', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', 342.4, 511.3, 'f', '1/12/2021', 'shalq'),
+ ('Johgn', 'https://i.ytimg.com/vi/Efj-XKwuprE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAuECAx1ihJNcJZlZgFdhzx9on44w', 122.4, 53.3, 'f', '1/12/2021', 'shalq')

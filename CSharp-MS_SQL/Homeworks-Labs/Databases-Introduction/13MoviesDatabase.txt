@@ -1,0 +1,65 @@
+CREATE TABLE Directors
+(
+	id INT PRIMARY KEY IDENTITY,
+	DirectorName nvarchar(30) NOT NULL,
+	Notes nvarchar(MAX) NULL
+);
+
+INSERT INTO [Directors](DirectorName, Notes)
+VALUES
+	('Ivan', 'Some y'),
+	('Dragan', 'Somasdae'),
+	('Vashk', 'Sodasdme'),
+	('Icko', 'Desc'),
+	('Kristian', NULL);
+
+CREATE TABLE Genres
+(
+	id INT PRIMARY KEY IDENTITY,
+	GenreName nvarchar(30) NOT NULL,
+	Notes nvarchar(MAX) NULL
+);
+
+INSERT INTO [Genres](GenreName, Notes)
+VALUES
+	('Action', 'Some y'),
+	('Musical', 'Somasdae'),
+	('Vashk', 'Sodasdme'),
+	('Icko', 'Desc'),
+	('Kristian', NULL);
+
+CREATE TABLE Categories
+(
+	id INT PRIMARY KEY IDENTITY,
+	CategoryName nvarchar(30) NOT NULL,
+	Notes nvarchar(MAX) NULL
+);
+
+INSERT INTO [Categories](CategoryName, Notes)
+VALUES
+	('Action', 'Some y'),
+	('Musical', 'Somasdae'),
+	('Vashk', 'Sodasdme'),
+	('Icksada', 'Desc'),
+	('Krisdan', NULL);
+
+CREATE TABLE Movies
+(
+	id INT PRIMARY KEY IDENTITY,
+	Title nvarchar(30) NOT NULL,
+	DirectorId INT NOT NULL,
+	CopyrightYear DATETIME NOT NULL,
+	[Length] DECIMAL NOT NULL,
+	GenreId INT NOT NULL,
+	CategoryId INT NOT NULL,
+	Rating DECIMAL NOT NULL,
+	Notes nvarchar(MAX) NULL
+);
+
+INSERT INTO [Movies](Title, DirectorId, CopyrightYear, [Length], GenreId, CategoryId, Rating, Notes)
+VALUES
+	('RAMBO', 1, '02/05/2005', 155.5, 4, 2, 55.5, 'Good Movie'),
+	('Kambo', 2, '12/06/2015', 54.5, 5, 1, 45.5, 'Good Movie'),
+	('Duri', 3, '03/07/2014', 125.5, 3, 3, 35.5, 'Good Movie'),
+	('TTIA', 4, '05/11/2012', 45.5, 2, 4, 25.5, 'Good Movie'),
+	('TOZI', 5, '06/04/2021', 65.5, 1, 5, 55.5, 'Good Movie');
