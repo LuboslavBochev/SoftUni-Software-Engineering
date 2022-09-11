@@ -1,0 +1,2 @@
+SELECT Top(10) * From Projects
+ORDER BY [StartDate] ASC, [Name] ASC
