@@ -1,0 +1,4 @@
+SELECT COUNT(*) FROM Countries AS c
+	LEFT JOIN MountainsCountries mC ON c.CountryCode = mC.CountryCode
+	LEFT JOIN Mountains m ON mC.MountainId = m.Id
+WHERE m.MountainRange IS NULL

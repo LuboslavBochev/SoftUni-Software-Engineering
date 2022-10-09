@@ -1,0 +1,6 @@
+SELECT TOP(5) CountryName, r.RiverName FROM Countries AS c
+	LEFT JOIN CountriesRivers cR ON c.CountryCode = cR.CountryCode
+	LEFT JOIN Rivers r ON r.Id = cr.RiverId
+	JOIN Continents cN ON c.ContinentCode = cN.ContinentCode
+WHERE cN.ContinentCode = 'AF'
+	ORDER BY c.CountryName

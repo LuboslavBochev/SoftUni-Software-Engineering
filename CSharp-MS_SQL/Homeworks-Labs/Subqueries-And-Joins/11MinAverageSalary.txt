@@ -1,0 +1,2 @@
+SELECT TOP(1) AVG(Salary) AS Salary FROM Employees GROUP BY DepartmentID
+	ORDER BY Salary
