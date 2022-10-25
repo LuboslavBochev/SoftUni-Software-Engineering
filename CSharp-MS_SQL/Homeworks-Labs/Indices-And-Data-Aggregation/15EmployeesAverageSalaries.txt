@@ -1,0 +1,14 @@
+SELECT * INTO [EmployeesCustom] FROM Employees
+WHERE [Salary] > 30000
+ 
+DELETE FROM EmployeesCustom
+WHERE [ManagerID] = 42
+ 
+UPDATE EmployeesCustom
+SET [Salary] += 5000
+WHERE [DepartmentID] = 1
+ 
+SELECT [DepartmentID],
+    AVG([Salary]) as [AverageSalary]
+FROM EmployeesCustom
+GROUP BY [DepartmentID]
