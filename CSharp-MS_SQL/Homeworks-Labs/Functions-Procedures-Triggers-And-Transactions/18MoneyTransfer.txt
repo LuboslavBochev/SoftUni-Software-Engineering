@@ -1,0 +1,12 @@
+CREATE PROCEDURE usp_TransferMoney(@SenderId INT, @ReceiverId INT, @MoneyAmount MONEY)
+AS
+BEGIN
+	DECLARE @checkSenderId INT = (SELECT id FROM Accounts WHERE @SenderId = id)
+	DECLARE @checkReceiverId INT = (SELECT id FROM Accounts WHERE @ReceiverId = id)
+
+	IF (@checkSenderId != 0 AND @checkReceiverId != 0)
+	BEGIN
+		EXEC usp_DepositMoney @ReceiverId, @MoneyAmount
+		EXEC usp_WithdrawMoney @SenderId, @MoneyAmount
+	END;
+END;

@@ -1,0 +1,15 @@
+CREATE FUNCTION ufn_GetSalaryLevel(@salary DECIMAL(18,4))
+RETURNS varchar(10) AS
+BEGIN 
+	DECLARE @minSalary varchar(10)
+
+	IF(@salary < 30000)
+	SET @minSalary = 'Low';
+
+	IF(@salary >= 30000 AND @salary <= 50000)
+	SET @minSalary = 'Average';
+
+	ELSE IF(@salary > 50000)
+	SET @minSalary = 'High'
+	RETURN @minSalary
+END;

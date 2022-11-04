@@ -1,0 +1,25 @@
+CREATE PROC usp_AssignProject(@emloyeeId INT, @projectID INT) 
+AS
+BEGIN TRANSACTION
+
+DECLARE @checkEmID INT = (SELECT EmployeeID FROM Employees WHERE EmployeeID = @emloyeeId)
+DECLARE @checkProjID INT = (SELECT ProjectID FROM Projects WHERE ProjectID = @projectID)
+
+IF(@checkEmID IS NULL OR @checkProjID IS NULL)
+BEGIN
+	ROLLBACK;
+	RAISERROR('Invalid employee or project id!', 16, 1)
+	RETURN
+END
+
+DECLARE @numProject INT = (SELECT COUNT(*) FROM EmployeesProjects WHERE EmployeeID = @emloyeeId)
+
+IF(@numProject >= 3)
+BEGIN
+	ROLLBACK
+	RAISERROR('The employee has too many projects!', 16, 1)
+	RETURN
+END
+
+INSERT INTO EmployeesProjects(EmployeeID, ProjectID) VALUES(@emloyeeId, @projectID)
+COMMIT

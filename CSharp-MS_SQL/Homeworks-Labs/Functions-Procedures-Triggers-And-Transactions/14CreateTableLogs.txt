@@ -1,0 +1,6 @@
+CREATE TRIGGER tr_OnUpdateCreatingAccountLog
+ON Accounts FOR UPDATE
+AS
+	INSERT INTO Logs(AccountId, OldSum, NewSum)
+	SELECT i.AccountHolderId AS AccountId, d.Balance AS OldSum ,i.Balance AS NewSum FROM inserted AS i
+		INNER JOIN deleted as d ON d.Id = i.Id

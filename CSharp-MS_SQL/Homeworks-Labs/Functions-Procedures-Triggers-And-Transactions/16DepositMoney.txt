@@ -1,0 +1,11 @@
+CREATE PROCEDURE usp_DepositMoney(@AccountId INT, @MoneyAmount MONEY)
+AS
+BEGIN
+	DECLARE @checkId INT = (SELECT id FROM Accounts WHERE @AccountId = id)
+
+	IF @checkId != 0
+	BEGIN
+		UPDATE Accounts SET Balance += CAST(@MoneyAmount AS decimal(15,4))
+			WHERE Id = @AccountId
+	END;
+END;

@@ -1,0 +1,14 @@
+CREATE TRIGGER tr_CreatingNewEmailWhenNewRecordIsInsertedInLogTable
+ON Logs FOR INSERT
+AS
+DECLARE @AccountID INT = (SELECT TOP(1) AccountId FROM inserted)
+DECLARE @OldSum MONEY = (SELECT TOP(1) OldSum FROM inserted)
+DECLARE @NewSum MONEY = (SELECT TOP(1) NewSum FROM inserted)
+
+	INSERT INTO NotificationEmails(Recipient, [Subject], Body)
+	VALUES
+	(
+		@AccountID,
+		CONCAT('Balance change for account: ', @AccountID),
+		CONCAT('On ', GETDATE(), ' your balance was changed from ', @OldSum, ' to ', @NewSum)
+	)

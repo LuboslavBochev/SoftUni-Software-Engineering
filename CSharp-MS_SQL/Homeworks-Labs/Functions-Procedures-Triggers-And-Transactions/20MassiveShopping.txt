@@ -1,0 +1,7 @@
+ SELECT i.Name AS [Item Name] FROM UsersGames AS uG
+	INNER JOIN Games AS g ON uG.GameId = g.Id
+	INNER JOIN Users AS u ON u.Id = uG.UserId
+	INNER JOIN UserGameItems AS uGI ON uGI.UserGameId = uG.Id
+	INNER JOIN Items AS i ON i.Id = uGI.ItemId
+		WHERE g.Name = 'Safflower' AND u.Username = 'Stamat'
+		ORDER BY i.Name ASC

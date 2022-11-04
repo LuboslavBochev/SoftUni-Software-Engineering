@@ -1,0 +1,17 @@
+CREATE FUNCTION ufn_CalculateFutureValue(@initialInvestment DECIMAL(18,4),
+@yInterestRate FLOAT, @numYears INT)
+RETURNS MONEY
+AS
+	BEGIN
+		 DECLARE @result MONEY
+		 SET @result = @initialInvestment;
+
+		 WHILE @numYears > 0
+			BEGIN 
+			SET @numYears = @numYears - 1;
+
+			SET @result *= @yInterestRate + 1;  
+
+			END;
+		 RETURN @result
+END;
