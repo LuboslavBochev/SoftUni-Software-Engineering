@@ -1,0 +1,6 @@
+SELECT o.Name + '-' + a.Name AS [OwnersAnimals], o.PhoneNumber, c.Id AS [CageId] FROM Animals AS a
+	INNER JOIN Owners AS o ON o.Id = a.OwnerId
+	INNER JOIN AnimalsCages AS aC ON aC.AnimalId = a.id
+	INNER JOIN Cages AS c ON c.Id = aC.CageId
+		WHERE a.AnimalTypeId = 1
+		ORDER BY o.Name ASC, a.Name DESC

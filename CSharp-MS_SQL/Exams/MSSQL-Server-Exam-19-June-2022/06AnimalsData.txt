@@ -1,0 +1,3 @@
+SELECT a.[Name], aT.AnimalType, FORMAT (a.BirthDate, 'dd.MM.yyyy ') AS [BirthDate] FROM Animals AS a
+	INNER JOIN AnimalTypes AS [aT] ON aT.Id = a.AnimalTypeId
+		ORDER BY a.Name

@@ -1,0 +1,4 @@
+SELECT v.Name, v.PhoneNumber, LTRIM(REPLACE(SUBSTRING(v.Address, 8, LEN(v.Address)), ',', '')) AS Address FROM Volunteers AS v
+	LEFT JOIN VolunteersDepartments AS vD ON vD.Id = v.Id
+		WHERE v.DepartmentId = 2 AND REPLACE(LTRIM(LEFT(v.Address, 6)), ',', '') = 'Sofia'
+			ORDER BY v.Name

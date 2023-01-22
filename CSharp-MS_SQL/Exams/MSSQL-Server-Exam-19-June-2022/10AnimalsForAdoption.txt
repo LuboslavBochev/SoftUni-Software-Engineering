@@ -1,0 +1,7 @@
+SELECT Name, YEAR(a.BirthDate) AS BirthYear, at.AnimalType 
+FROM Animals AS a
+JOIN AnimalTypes AS at ON a.AnimalTypeId = at.Id
+WHERE OwnerId IS NULL
+	AND AnimalTypeId != 3
+	AND DATEDIFF(YEAR, BirthDate, '01/01/2022') < 5
+ORDER BY Name

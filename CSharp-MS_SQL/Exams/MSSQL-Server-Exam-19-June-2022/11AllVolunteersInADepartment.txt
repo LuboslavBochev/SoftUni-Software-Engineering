@@ -1,0 +1,9 @@
+CREATE FUNCTION udf_GetVolunteersCountFromADepartment (@VolunteersDepartment varchar(30))
+RETURNS INT AS
+BEGIN
+	DECLARE @result INT = (SELECT COUNT(*) FROM Volunteers AS v
+	JOIN VolunteersDepartments AS vD ON vD.Id = v.DepartmentId
+		WHERE vD.DepartmentName = @VolunteersDepartment)
+
+	RETURN @result
+END
