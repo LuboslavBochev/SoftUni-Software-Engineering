@@ -1,0 +1,4 @@
+SELECT cR.CurrencyCode, cr.Description AS [Currency], COUNT(c.CountryName) AS [NumberOfCountries] FROM Countries AS c
+	RIGHT JOIN Currencies AS cR ON cR.CurrencyCode = c.CurrencyCode
+		GROUP BY cR.CurrencyCode, cR.Description
+		ORDER BY [NumberOfCountries] DESC, cR.Description ASC

@@ -1,0 +1,40 @@
+CREATE TABLE Monasteries
+(
+	Id INT PRIMARY KEY IDENTITY NOT NULL,
+	[Name] varchar(50) NOT NULL,
+	CountryCode char(2) FOREIGN KEY REFERENCES Countries(CountryCode) NOT NULL
+)
+
+INSERT INTO Monasteries(Name, CountryCode) VALUES
+('Rila Monastery “St. Ivan of Rila”', 'BG'), 
+('Bachkovo Monastery “Virgin Mary”', 'BG'),
+('Troyan Monastery “Holy Mother''s Assumption”', 'BG'),
+('Kopan Monastery', 'NP'),
+('Thrangu Tashi Yangtse Monastery', 'NP'),
+('Shechen Tennyi Dargyeling Monastery', 'NP'),
+('Benchen Monastery', 'NP'),
+('Southern Shaolin Monastery', 'CN'),
+('Dabei Monastery', 'CN'),
+('Wa Sau Toi', 'CN'),
+('Lhunshigyia Monastery', 'CN'),
+('Rakya Monastery', 'CN'),
+('Monasteries of Meteora', 'GR'),
+('The Holy Monastery of Stavronikita', 'GR'),
+('Taung Kalat Monastery', 'MM'),
+('Pa-Auk Forest Monastery', 'MM'),
+('Taktsang Palphug Monastery', 'BT'),
+('Sümela Monastery', 'TR')
+
+UPDATE Countries
+SET IsDeleted = 1
+WHERE CountryName IN(SELECT c.CountryName FROM Countries AS c
+	LEFT JOIN CountriesRivers AS cR ON cR.CountryCode = c.CountryCode
+	LEFT JOIN Rivers AS r ON r.Id = cR.RiverId
+	GROUP BY c.CountryName
+	HAVING COUNT(r.RiverName) > 3)
+
+SELECT m.Name AS [Monastery], c.CountryName AS [Country] FROM Monasteries AS m
+	LEFT JOIN Countries AS c ON c.CountryCode = m.CountryCode
+	WHERE c.IsDeleted <> 1
+	ORDER BY m.Name
+

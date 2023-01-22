@@ -1,0 +1,10 @@
+SELECT fir.Username, fir.Game, COUNT(fir.Item) AS [Items Count], SUM(fir.Price) AS [Items Price] FROM (SELECT u.Username, g.Name [Game], i.Name [Item], i.Price FROM Users AS u
+	INNER JOIN UsersGames AS uG ON u.Id = uG.UserId
+	INNER JOIN Games AS g ON g.Id = uG.GameId
+	INNER JOIN UserGameItems AS uGI ON uGI.UserGameId = uG.Id
+	INNER JOIN Items AS i ON i.Id = uGI.ItemId) as fir
+		GROUP BY fir.Username, fir.Game
+		HAVING COUNT(fir.Item) >= 10
+		ORDER BY [Items Count] DESC, [Items Price] DESC, fir.Username ASC
+
+	

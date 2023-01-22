@@ -1,0 +1,4 @@
+SELECT [Email Provider], COUNT(Username) AS [Number Of Users] FROM (SELECT SUBSTRING(Email, CHARINDEX('@', Email, 0) + 1, LEN(Email)) AS [Email Provider], Username FROM Users)
+AS firstt
+	GROUP BY [Email Provider]
+	ORDER BY [Number Of Users] DESC, [Email Provider] ASC

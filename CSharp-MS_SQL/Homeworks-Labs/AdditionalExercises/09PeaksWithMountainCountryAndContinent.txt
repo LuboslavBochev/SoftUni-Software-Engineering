@@ -1,0 +1,6 @@
+SELECT p.PeakName, m.MountainRange, c.CountryName, cN.ContinentName FROM Peaks AS p
+	INNER JOIN Mountains AS m ON m.Id = p.MountainId
+	INNER JOIN MountainsCountries AS mC ON mC.MountainId = m.Id
+	INNER JOIN Countries AS c ON c.CountryCode = mC.CountryCode
+	INNER JOIN Continents AS cN ON cN.ContinentCode = c.ContinentCode
+		ORDER BY p.PeakName ASC, c.CountryName ASC
