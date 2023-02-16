@@ -1,0 +1,7 @@
+SELECT * FROM(
+SELECT a.Id AS [AircraftId], a.Manufacturer, a.FlightHours, COUNT(fD.Id) AS [FlightDestinationsCount],
+ROUND(AVG(fD.TicketPrice), 2) [AvgPrice] FROM FlightDestinations AS fD
+	INNER JOIN Aircraft AS a ON a.Id = fD.AircraftId
+	GROUP BY a.Id, a.Manufacturer, a.FlightHours
+	HAVING COUNT(fD.Id) >= 2)AS f
+	ORDER BY f.FlightDestinationsCount DESC, f.AircraftId

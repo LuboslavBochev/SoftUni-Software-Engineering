@@ -1,0 +1,6 @@
+SELECT p.FullName, COUNT(a.Id) AS [CountOfAircraft], SUM(fD.TicketPrice) AS [TotalPayed] FROM FlightDestinations AS fD
+	JOIN Aircraft AS a ON a.Id = fD.AircraftId
+	JOIN Passengers AS p ON p.Id = fD.PassengerId
+	GROUP BY p.FullName
+	HAVING COUNT(a.Id) > 1 AND p.FullName LIKE '_a%'
+	ORDER BY p.FullName

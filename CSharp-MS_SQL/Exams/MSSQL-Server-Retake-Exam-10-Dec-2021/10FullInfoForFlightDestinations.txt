@@ -1,0 +1,6 @@
+SELECT a.AirportName, fD.Start, fD.TicketPrice, p.FullName, air.Manufacturer, air.Model FROM FlightDestinations AS fD
+	JOIN Airports AS a ON a.Id = fD.AirportId
+	JOIN Passengers AS p ON p.Id = fD.PassengerId
+	JOIN Aircraft AS air ON air.Id = fD.AircraftId
+	WHERE (DATEPART(HOUR, fD.Start) BETWEEN 6 AND 20) AND fD.TicketPrice > 2500
+	ORDER BY air.Model

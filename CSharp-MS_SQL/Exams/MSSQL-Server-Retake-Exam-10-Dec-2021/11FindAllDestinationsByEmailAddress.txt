@@ -1,0 +1,9 @@
+CREATE FUNCTION dbo.udf_FlightDestinationsByEmail (@Email varchar(50))
+RETURNS INT AS
+BEGIN
+	DECLARE @result INT = (SELECT COUNT(p.Email) FROM FlightDestinations AS fD
+					JOIN Passengers AS p ON p.Id = fD.PassengerId
+					WHERE p.Email = @Email
+	)
+	RETURN @result
+END

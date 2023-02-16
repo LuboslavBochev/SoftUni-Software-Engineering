@@ -1,0 +1,5 @@
+SELECT TOP(20) fD.Id, fD.Start, p.FullName, a.AirportName, fD.TicketPrice FROM FlightDestinations AS fD
+	JOIN Passengers AS p ON p.Id = fD.PassengerId
+	JOIN Airports AS a ON a.Id = fD.AirportId
+	WHERE DAY([Start]) % 2 = 0
+	ORDER BY fD.TicketPrice DESC, a.AirportName ASC
