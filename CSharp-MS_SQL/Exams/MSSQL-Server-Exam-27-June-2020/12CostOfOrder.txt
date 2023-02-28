@@ -1,0 +1,18 @@
+CREATE FUNCTION udf_GetCost(@jobId INT)
+RETURNS DECIMAL(19,2) AS
+BEGIN
+	DECLARE @checkJob INT = (SELECT JobId FROM Jobs WHERE JobId = @jobId)
+	IF(@checkJob IS NULL)
+	BEGIN
+		RETURN 0;
+	END
+
+	DECLARE @result DECIMAL(19,2) = (SELECT SUM(oP.Quantity * p.Price) AS [Result] FROM Orders AS o
+	JOIN OrderParts AS oP ON oP.OrderId = o.OrderId
+	JOIN Parts AS p ON p.PartId = oP.PartId
+		WHERE o.JobId = @jobId
+		GROUP BY o.JobId)
+	IF(@result IS NULL) RETURN 0
+
+	RETURN @result
+END
